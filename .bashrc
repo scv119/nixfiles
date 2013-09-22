@@ -78,6 +78,9 @@ fi
 #by dccmx
 set -o vi
 
+. ~/.git-completion.sh
+. ~/.go.sh
+
 . ~/.bash/aliase
 . ~/.bash/export
 . ~/.bash/function
