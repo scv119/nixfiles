@@ -29,7 +29,7 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 "Bundle 'dccmx/google-style.vim'
 Bundle 'JSON.vim'
-"Bundle 'dccmx/vim-lemon-syntax'
+Bundle 'dccmx/vim-lemon-syntax'
 Bundle 'plasticboy/vim-markdown'
 "Bundle 'dccmx/vim-puppet'
 Bundle 'matchit.zip'
