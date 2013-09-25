@@ -257,7 +257,7 @@ nmap <leader>x <Esc>:q<CR>
 nmap <leader>qa :qall<CR>
 " }}}
 
-nmap <F3> :Ack 
+nmap <F3> :Ack <CR>
 nmap <F4> :Ack <cword> % <CR>
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr> 
