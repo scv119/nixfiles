@@ -239,11 +239,11 @@ let NERDTreeWinPos="right"
 "vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 "
 "" Make Arrow Keys Useful Again {{{
-"map <down> <ESC>:bd<CR>
-"map <up> <ESC>:Scratch<CR>
-"map <right> <ESC>:bn!<CR>
-"map <left> <ESC>:bp!<CR>
-"map <space> <ESC>:b#<CR>
+map <down> <ESC>:bd<CR>
+map <up> <ESC>:Scratch<CR>
+map <right> <ESC>:bn!<CR>
+map <left> <ESC>:bp!<CR>
+map <space> <ESC>:b#<CR>
 "map <leader>bd <ESC>:call CloseTab()<CR>
 "func! CloseTab()
 "    let s:buf_nr = bufnr("%")
@@ -265,7 +265,7 @@ let NERDTreeWinPos="right"
 "nmap <leader>H <Esc>:A!<CR>
 "nmap <leader>f :CtrlP<cr>
 "nmap <leader>gf <Esc>:GoFmt<CR>
-"nmap <leader>tl <Esc>:TagbarToggle<CR>
+nmap <leader>tl <Esc>:TagbarToggle<CR>
 nmap <leader>fl <Esc>:NERDTreeToggle<CR>
 "nmap <leader>el :cw<CR>
 "nmap <leader>se :Errors<CR><C-j>
