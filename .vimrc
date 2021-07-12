@@ -1,4 +1,4 @@
-" Modeline and Notes {{{
+"# Modeline and Notes {{{
 "   vim:foldmethod=marker:foldmarker={{{,}}}:foldlevel=0 :
 "
 "   my personal .vimrc by dccmx
@@ -46,8 +46,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/vimshell'
 Bundle 'rhysd/vim-clang-format'
-Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'morhetz/gruvbox'
+Bundle 'bfrg/vim-cpp-modern'
 
 "filetype plugin indent on     " required!
 "" }}}
@@ -58,15 +58,16 @@ set noexrc " don't use local version of .(g)vimrc, .exrc
 let mapleader=","
 set background=dark
 syntax on
-" color desert
+color gruvbox
 set fileencoding=utf-8
 set termencoding=utf-8
 "set fileencodings=utf-8,gbk,ucs-bom,cp936,default
 "set nobackup
 "set nowritebackup
 "set noswapfile
-"set history=1000         " remember more commands and search history
-"set undolevels=1000      " use many muchos levels of undo
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set colorcolumn=100
 "" }}}
 "
 """ Folding {{{
@@ -105,7 +106,8 @@ set autoread
 """nnoremap / /\v
 """vnoremap / /\v
 set cursorline " highlight current line
-""set incsearch " BUT do highlight as you type you search phrase
+set incsearch " BUT do highlight as you type you search phrase
+set hls
 ""set nowrapscan 
 ""set laststatus=2 " always show the status line
 ""set lazyredraw " do not redraw while running macros
@@ -121,8 +123,8 @@ nmap <leader>h <Esc>:call ToggleHLSearch()<CR>
 ""
 ""set nostartofline " leave my cursor where it was
 set number " turn on line numbers
-""set report=0 " tell us when anything is changed via :...
-""set ruler " Always show current positions along the bottom
+set report=0 " tell us when anything is changed via :...
+set ruler " Always show current positions along the bottom
 set scrolloff=10 " Keep 10 lines (top/bottom) for scope
 ""set shortmess+=I "disable startup message
 set showcmd " show the command being typed
@@ -164,7 +166,7 @@ set tabstop=2 " real tabs should be 8, and they will show with  set list on
 """ Plugin Settings {{{
 ""
 """ Powerline Settings {{{
-let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'fancy'
 let g:Powerline_stl_path_style = 'filename'
 call Pl#Theme#InsertSegment('pwd', 'before', 'fileformat')
 """ }}}
@@ -208,7 +210,7 @@ let NERDTreeWinPos="right"
 "let g:syntastic_check_on_open=1
 "let g:syntastic_cpp_compiler_options=' -D_GNU_SOURCE -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
 "let g:syntastic_c_compiler_options=' -D_GNU_SOURCE -std=c99 -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
-"let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_python_flake8_args='--ignore=E501'
 "" }}}
 "
 "" ack {{{
@@ -219,7 +221,7 @@ let NERDTreeWinPos="right"
 "
 "" Mappings {{{
 "" save me from SHIFT
-"nnoremap ; :
+nnoremap ; :
 "
 set pastetoggle=<F2>
 "
@@ -264,17 +266,17 @@ nmap <F3> :Ack <CR>
 "nmap <F4> :Ack <cword> % <CR>
 "nmap <F9> :SCCompile<cr>
 "nmap <F10> :SCCompileRun<cr> 
-"nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ack 
 "nmap <leader>H <Esc>:A!<CR>
 nmap <leader>f :CtrlP<cr>
 "nmap <leader>gf <Esc>:GoFmt<CR>
 nmap <leader>tl <Esc>:TagbarToggle<CR>
 nmap <leader>fl <Esc>:NERDTreeToggle<CR>
-"nmap <leader>el :cw<CR>
+nmap <leader>el :cw<CR>
 "nmap <leader>se :Errors<CR><C-j>
-"nmap <leader>en :cn<CR>
-"nmap <leader>ep :cp<CR>
-"nmap <leader>ec :cclose<CR>
+nmap <leader>en :cn<CR>
+nmap <leader>ep :cp<CR>
+nmap <leader>ec :cclose<CR>
 "nmap <leader>es :Errors<CR>
 "nmap <leader><space> :make<CR>
 "
@@ -308,7 +310,8 @@ map <leader>cd :cd %:p:h<CR>
 ""autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 ""autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 ""autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-"""autocmd FileType c setlocal omnifunc=ccomplete#Complete (use clang complete)
+"autocmd FileType c setlocal omnifunc=ccomplete#Complete (use clang complete)
+"autocmd FileType cpp setlocal omnifunc=ccomplete#Complete (use clang complete)
 ""autocmd BufWritePre *.go Fmt
 ""
 """ save when losing focus
@@ -339,4 +342,6 @@ autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
 nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 " cpp-highlight 
-let g:cpp_class_scope_highlight = 1
+"let g:cpp_class_scope_highlight = 1
+
+" gruvbox
